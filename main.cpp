@@ -16,7 +16,7 @@
 
 #include "shader.hpp"
 
-//variables
+// variables
 GLFWwindow* window;
 const int width = 1024, height = 768;
 float xpos_mouse = width / 2;
@@ -76,7 +76,7 @@ int main(void)
 		return -1;
 	}
 
-	//specify the size of the rendering window
+	// specify the size of the rendering window
 	glViewport(0, 0, width, height);
 
 	// Dark blue background
@@ -87,21 +87,21 @@ int main(void)
 	// More about this in the following labs
 	GLuint programID = LoadShaders("SimpleVertexShader.vertexshader", "SimpleFragmentShader.fragmentshader");
 
-	float g_vertex_buffer_data3[] = {//hexagonal prism
-		0.0f, 0.5f, 0.0f, //0.0f,  0.0f, 1.0f,
-		-0.25f, 0.5f, -0.433f, //0.0f,  0.0f, 1.0f,
-		-0.5f, 0.5f, 0.0f, //0.0f,  0.0f, 1.0f,
-		-0.25f, 0.5f, 0.433f, //0.0f,  0.0f, 1.0f,
-		0.25f, 0.5f, 0.433f, //0.0f,  0.0f, 1.0f,
-		0.5f, 0.5f, 0.0f, //0.0f,  0.0f, 1.0f,
-		0.25f, 0.5f, -0.433f, //0.0f,  0.0f, 1.0f,
-		0.0f, -0.5f, 0.0f, //0.0f,  0.0f, 1.0f,
-		-0.25f, -0.5f, -0.433f, //0.0f,  0.0f, 1.0f,
-		-0.5f, -0.5f, 0.0f, //0.0f,  0.0f, 1.0f,
-		-0.25f, -0.5f, 0.433f, //0.0f,  0.0f, 1.0f,
-		0.25f, -0.5f, 0.433f, //0.0f,  0.0f, 1.0f,
-		0.5f, -0.5f, 0.0f, //0.0f,  0.0f, 1.0f,
-		0.25f, -0.5f, -0.433f, //0.0f,  0.0f, 1.0f
+	float g_vertex_buffer_data3[] = { // hexagonal prism
+		0.0f, 0.5f, 0.0f, // 0.0f,  0.0f, 1.0f,
+		-0.25f, 0.5f, -0.433f, // 0.0f,  0.0f, 1.0f,
+		-0.5f, 0.5f, 0.0f, // 0.0f,  0.0f, 1.0f,
+		-0.25f, 0.5f, 0.433f, // 0.0f,  0.0f, 1.0f,
+		0.25f, 0.5f, 0.433f, // 0.0f,  0.0f, 1.0f,
+		0.5f, 0.5f, 0.0f, // 0.0f,  0.0f, 1.0f,
+		0.25f, 0.5f, -0.433f, // 0.0f,  0.0f, 1.0f,
+		0.0f, -0.5f, 0.0f, // 0.0f,  0.0f, 1.0f,
+		-0.25f, -0.5f, -0.433f, // 0.0f,  0.0f, 1.0f,
+		-0.5f, -0.5f, 0.0f, // 0.0f,  0.0f, 1.0f,
+		-0.25f, -0.5f, 0.433f, // 0.0f,  0.0f, 1.0f,
+		0.25f, -0.5f, 0.433f, // 0.0f,  0.0f, 1.0f,
+		0.5f, -0.5f, 0.0f, // 0.0f,  0.0f, 1.0f,
+		0.25f, -0.5f, -0.433f, // 0.0f,  0.0f, 1.0f
 	};
 
 	unsigned int indices3[] = {  // note that we start from 0!
@@ -131,17 +131,17 @@ int main(void)
 		2, 10, 3
 	};
 
-	float g_vertex_buffer_data[] = { //cube
-		//front
-		-0.5f, -0.5f, 0.5f, //0.0f,  0.0f, 1.0f,
-		0.5f, -0.5f, 0.5f, //0.0f,  0.0f, 1.0f,
-		0.5f, 0.5f, 0.5f, //0.0f,  0.0f, 1.0f,
-		-0.5f, 0.5f, 0.5f, //0.0f,  0.0f, 1.0f,
+	float g_vertex_buffer_data[] = { // cube
+		// front
+		-0.5f, -0.5f, 0.5f, // 0.0f,  0.0f, 1.0f,
+		0.5f, -0.5f, 0.5f, // 0.0f,  0.0f, 1.0f,
+		0.5f, 0.5f, 0.5f, // 0.0f,  0.0f, 1.0f,
+		-0.5f, 0.5f, 0.5f, // 0.0f,  0.0f, 1.0f,
 		// back
-		-0.5f, -0.5f, -0.5f, //0.0f,  0.0f, 1.0f,
-		0.5f, -0.5f, -0.5f, //0.0f,  0.0f, 1.0f,
-		0.5f, 0.5f, -0.5f, //0.0f,  0.0f, 1.0f,
-		-0.5f, 0.5f, -0.5f, //0.0f,  0.0f, 1.0f
+		-0.5f, -0.5f, -0.5f, // 0.0f,  0.0f, 1.0f,
+		0.5f, -0.5f, -0.5f, // 0.0f,  0.0f, 1.0f,
+		0.5f, 0.5f, -0.5f, // 0.0f,  0.0f, 1.0f,
+		-0.5f, 0.5f, -0.5f, // 0.0f,  0.0f, 1.0f
 	};
 
 	// One color for each vertex. 
@@ -157,8 +157,8 @@ int main(void)
 	};
 
 	unsigned int indices[] = {  // note that we start from 0!
-		0, 1, 3, // first Triangle
-		1, 2, 3,   // second Triangle
+		0, 1, 3, // first triangle
+		1, 2, 3,   // second triangle
 		1 ,2 ,5,
 		2, 6, 5,
 		0, 1 ,4,
@@ -171,13 +171,13 @@ int main(void)
 		7, 6, 5
 	};
 
-	float g_vertex_buffer_data1[] = {	//pyramid
-		//front
-		-0.5f, -0.5f, 0.5f, //0.0f,  0.0f, 1.0f,
-		0.5f, -0.5f, 0.5f, //0.0f,  0.0f, 1.0f,
-		0.5f, -0.5f, -0.5f, //0.0f,  0.0f, 1.0f,
-		-0.5f, -0.5f, -0.5f, //0.0f,  0.0f, 1.0f,
-		0.0f, 0.5f, 0.0f//, 0.0f,  0.0f, 1.0f
+	float g_vertex_buffer_data1[] = {	// pyramid
+		// front
+		-0.5f, -0.5f, 0.5f, // 0.0f,  0.0f, 1.0f,
+		0.5f, -0.5f, 0.5f, // 0.0f,  0.0f, 1.0f,
+		0.5f, -0.5f, -0.5f, // 0.0f,  0.0f, 1.0f,
+		-0.5f, -0.5f, -0.5f, // 0.0f,  0.0f, 1.0f,
+		0.0f, 0.5f, 0.0f //, 0.0f,  0.0f, 1.0f
 
 	};
 
@@ -210,19 +210,19 @@ int main(void)
 	glBindVertexArray(vao);
 
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
-	//glBufferData(GL_ARRAY_BUFFER, sizeof(g_vertex_buffer_data), g_vertex_buffer_data, GL_STATIC_DRAW);
+	// glBufferData(GL_ARRAY_BUFFER, sizeof(g_vertex_buffer_data), g_vertex_buffer_data, GL_STATIC_DRAW);
 
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
-	//glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+	// glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
 
-	//set attribute pointers
+	// set attribute pointers
 	glVertexAttribPointer(
 		0,                  // attribute 0, must match the layout in the shader.
 		3,                  // size of each attribute
 		GL_FLOAT,           // type
 		GL_FALSE,           // normalized?
-		3 * sizeof(float),                  // stride
+		3 * sizeof(float),  // stride
 		(void*)0            // array buffer offset
 	);
 	glEnableVertexAttribArray(0);
@@ -230,8 +230,8 @@ int main(void)
 	// 2nd attribute buffer : colors
 
 
-	//glBindBuffer(GL_ARRAY_BUFFER, colorbuffer);
-	//glBufferData(GL_ARRAY_BUFFER, sizeof(g_color_buffer_data), g_color_buffer_data, GL_DYNAMIC_DRAW);
+	// glBindBuffer(GL_ARRAY_BUFFER, colorbuffer);
+	// glBufferData(GL_ARRAY_BUFFER, sizeof(g_color_buffer_data), g_color_buffer_data, GL_DYNAMIC_DRAW);
 	// 2nd attribute buffer : color coords
 	glVertexAttribPointer(
 		1,                  // attribute 1, must match the layout in the shader.
@@ -244,20 +244,20 @@ int main(void)
 	glEnableVertexAttribArray(1);
 
 
-	//Init controls mouse
+	// Init controls mouse
 
 	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
 	float sensitivity = 0.05f;
 
-	//Use Zbuffer for correct depth perception
+	// Use Zbuffer for correct depth perception
 	glEnable(GL_DEPTH_TEST);
 
-	glDepthFunc(GL_LESS); //Accept fragment if it closer to the camera than the former one
+	glDepthFunc(GL_LESS); // Accept fragment if it closer to the camera than the former one
 	glfwSetCursorPos(window, width / 2, height / 2);
-	//Mouse look enabled for EX2
+	// Mouse look enabled for EX2
 
-	int drawStage = 1; //drawing has 4 stages. 1. Nothing is being drawn, 2. Draw Square, 3. Draw triangle, 4. Draw circle
+	int drawStage = 1; // drawing has 4 stages. 1. Nothing is being drawn, 2. Draw Square, 3. Draw triangle, 4. Draw circle
 
 	float transform_over_time = 0;
 	bool transform_positive = true;
@@ -267,7 +267,7 @@ int main(void)
 	// Continously check if the window was closed
 	while (!glfwWindowShouldClose(window))
 	{
-		//TRANSFORMATION COMPUTE OVER TIME
+		// TRANSFORMATION COMPUTE OVER TIME
 		if (transform_over_time >= 2.0f) {
 			transform_positive = false;
 		}
@@ -282,7 +282,7 @@ int main(void)
 			transform_over_time -= 0.001f;
 		}
 
-		//CONTROLS BINDING
+		// CONTROLS BINDING
 		if (glfwGetKey(window, GLFW_KEY_ESCAPE))
 		{
 			kill_self(vao, vbo, programID);
@@ -315,19 +315,19 @@ int main(void)
 
 			glBufferData(GL_ARRAY_BUFFER, sizeof(g_vertex_buffer_data), g_vertex_buffer_data, GL_STATIC_DRAW);
 			glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-			//glBufferData(GL_ARRAY_BUFFER, sizeof(g_color_buffer_data), g_color_buffer_data, GL_DYNAMIC_DRAW);
+			// glBufferData(GL_ARRAY_BUFFER, sizeof(g_color_buffer_data), g_color_buffer_data, GL_DYNAMIC_DRAW);
 		}
 		if (glfwGetKey(window, GLFW_KEY_6)) {
 			drawStage = 3;
 			glBufferData(GL_ARRAY_BUFFER, sizeof(g_vertex_buffer_data1), g_vertex_buffer_data1, GL_STATIC_DRAW);
 			glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices1), indices1, GL_STATIC_DRAW);
-			//glBufferData(GL_ARRAY_BUFFER, sizeof(g_color_buffer_data1), g_color_buffer_data1, GL_DYNAMIC_DRAW);
+			// glBufferData(GL_ARRAY_BUFFER, sizeof(g_color_buffer_data1), g_color_buffer_data1, GL_DYNAMIC_DRAW);
 		}
 		if (glfwGetKey(window, GLFW_KEY_7)) {
 			drawStage = 4;
 			glBufferData(GL_ARRAY_BUFFER, sizeof(g_vertex_buffer_data3), g_vertex_buffer_data3, GL_STATIC_DRAW);
 			glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices3), indices3, GL_STATIC_DRAW);
-			//glBufferData(GL_ARRAY_BUFFER, sizeof(g_color_buffer_data), g_color_buffer_data, GL_DYNAMIC_DRAW);
+			// glBufferData(GL_ARRAY_BUFFER, sizeof(g_color_buffer_data), g_color_buffer_data, GL_DYNAMIC_DRAW);
 		}
 		if (glfwGetKey(window, GLFW_KEY_GRAVE_ACCENT)) {
 			transform_stage = 0;
@@ -361,17 +361,17 @@ int main(void)
 		glm::mat4 model;
 
 		if (transform_stage == 1) {
-			model = glm::translate(model, glm::vec3(transform_over_time / 2, 0.0f, 0.0f)); //move to right over time
+			model = glm::translate(model, glm::vec3(transform_over_time / 2, 0.0f, 0.0f)); // move to right over time
 		}
 		else if (transform_stage == 2) {
 			model = glm::scale(model, glm::vec3(transform_over_time / 5, transform_over_time / 5, transform_over_time / 5));
 		}
 		else if (transform_stage == 3) {
-			model = glm::rotate(model, transform_over_time * 50, glm::vec3(0.0f, 1.0f, 0.0f)); //rotate on y over time
+			model = glm::rotate(model, transform_over_time * 50, glm::vec3(0.0f, 1.0f, 0.0f)); // rotate on y over time
 		}
 
 
-		//	//increase size over time
+		//increase size over time
 
 
 		glm::mat4 view;
@@ -385,7 +385,7 @@ int main(void)
 		glm::mat4 trans;
 
 		glm::mat4 projection;
-		projection = glm::perspective(glm::radians(75.0f), (float)width / height, 0.1f, 1000.0f); //going for that quake fov
+		projection = glm::perspective(glm::radians(75.0f), (float)width / height, 0.1f, 1000.0f); // going for that quake fov
 
 		glm::mat4 MVP = projection * view * model;
 
@@ -393,7 +393,7 @@ int main(void)
 		glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(MVP));
 
 
-		//bind VAO
+		// bind VAO
 		glBindVertexArray(vao);
 		if (drawStage == 2) {
 			glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, 0);
@@ -410,5 +410,3 @@ int main(void)
 
 	return 0;
 }
-
-
