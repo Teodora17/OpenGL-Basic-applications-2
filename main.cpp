@@ -205,7 +205,7 @@ int main(void)
 	glGenVertexArrays(1, &vao);
 	glGenBuffers(1, &vbo);
 	glGenBuffers(1, &ibo);
-	//glGenBuffers(1, &colorbuffer);
+	// glGenBuffers(1, &colorbuffer);
 
 	glBindVertexArray(vao);
 
