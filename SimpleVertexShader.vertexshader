@@ -1,0 +1,24 @@
+#version 330 core
+
+// Input vertex data, different for all executions of this shader.
+layout(location = 0) in vec3 vertexPos; // the position variable has attribute position 0
+layout (location = 1) in vec3 colorCoords;
+
+//out vec4 vertexColor; // specify a color output to the fragment shader
+out vec3 colorRes;
+
+//uniform mat4 model;
+uniform mat4 transform;
+
+void main(){
+
+    gl_Position.xyz = vertexPos;
+    gl_Position.w = 1.0;
+
+	gl_Position = transform * gl_Position;
+	colorRes = colorCoords;
+	
+	
+	//vertexColor = vec4(0.5, 0.0, 0.0, 1.0); // set the output variable to a dark-red color
+
+}
